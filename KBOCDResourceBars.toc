@@ -1,0 +1,13 @@
+## Interface: 120000
+## Title: KBOCD Resource Bars
+## Notes: Creates simple and customizable resource bars
+## Author: KurenBatsu
+## Version: 1.0
+## SavedVariablesPerCharacter: KBOCDResourceBarsDB
+
+KBOCD_ResourceBars_Core.lua
+KBOCD_ResourceBars_BarElements.lua
+KBOCD_ResourceBars_Bars.lua
+KBOCD_ResourceBars_ConfigCore.lua
+KBOCD_ResourceBars_ConfigElements.lua
+KBOCD_ResourceBars_Config.lua
