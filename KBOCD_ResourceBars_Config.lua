@@ -355,6 +355,8 @@ addonLoadedFrame:RegisterEvent("ADDON_LOADED")
 addonLoadedFrame:RegisterEvent("PLAYER_LOGIN")
 addonLoadedFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 addonLoadedFrame:RegisterEvent("UNIT_DISPLAYPOWER")
+addonLoadedFrame:RegisterUnitEvent("UNIT_HEALTH", "target")
+addonLoadedFrame:RegisterEvent("PLAYER_TARGET_CHANGED")
 
 addonLoadedFrame:SetScript("OnEvent", function(_, event, eventValue)
     if event == "ADDON_LOADED" and eventValue == "KBOCDResourceBars" then
@@ -366,7 +368,7 @@ addonLoadedFrame:SetScript("OnEvent", function(_, event, eventValue)
         KBOCDResourceBars.playerUnitFrameHealthText = KBOCDResourceBars.CreatePlayerUnitFrameText(PlayerFrame, "", 112.5, 55)
         KBOCDResourceBars.playerUnitFramePrimaryResourceText = KBOCDResourceBars.CreatePlayerUnitFrameText(PlayerFrame, "", 112.5, 38.5)
         KBOCDResourceBars.playerUnitFrameAdditionalResourceText = KBOCDResourceBars.CreatePlayerUnitFrameText(PlayerFrame, "", 112.5, 26.5)
-        KBOCDResourceBars.targetUnitFrameHealthText = KBOCDResourceBars.CreateTargetUnitFrameText(TargetFrame, "100%", -25, 55)
+        KBOCDResourceBars.targetUnitFrameHealthText = KBOCDResourceBars.CreateTargetUnitFrameText(TargetFrame, "", -25, 55)
 
         KBOCDResourceBars.InitializeConfigCoreAliases() -- Must call after global values are created with bar creation function calls
         KBOCDResourceBars.CreateUIElementValuesTable()
@@ -395,5 +397,7 @@ addonLoadedFrame:SetScript("OnEvent", function(_, event, eventValue)
         if eventValue and eventValue ~= "player" then return end
         KBOCDResourceBars.Update(KBOCDResourceBars.primaryResourceBarGlobal, KBOCDResourceBarsDB.primaryResourceBar, KBOCDResourceBars.primaryResourceBarTextGlobal, KBOCDResourceBars.BarTypeReferenceValues.resource)
         KBOCDResourceBars.Update(KBOCDResourceBars.additionalResourceBarGlobal, KBOCDResourceBarsDB.additionalResourceBar, KBOCDResourceBars.additionalResourceBarTextGlobal, KBOCDResourceBars.BarTypeReferenceValues.resource)
+    elseif event == "UNIT_HEALTH" or event == "PLAYER_TARGET_CHANGED" then
+        KBOCDResourceBars.UpdateTargetHealthPercentage()
     end
 end)

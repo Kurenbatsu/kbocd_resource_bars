@@ -178,6 +178,16 @@ function KBOCDResourceBars.GradientCurve(barTable)
     return curve
 end
 
+function KBOCDResourceBars.UpdateTargetHealthPercentage()
+    local percentage = UnitHealthPercent(
+            "target",
+            true,
+            CurveConstants.ScaleTo100
+        )
+    KBOCDResourceBars.targetUnitFrameHealthText:SetText(string.format("%.0f%%", percentage))
+    KBOCDResourceBars.targetUnitFrameHealthText:SetAlpha(percentage)
+end
+
 function KBOCDResourceBars.Update(bar, barTable, barText, barType)
     local current = barType.current("player")
     local max = barType.max("player")
