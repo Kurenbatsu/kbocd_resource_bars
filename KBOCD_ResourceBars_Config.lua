@@ -378,6 +378,7 @@ addonLoadedFrame:SetScript("OnEvent", function(_, event, eventValue)
         KBOCDResourceBars.Update(KBOCDResourceBars.additionalResourceBarGlobal, KBOCDResourceBarsDB.additionalResourceBar, KBOCDResourceBars.additionalResourceBarTextGlobal, KBOCDResourceBars.BarTypeReferenceValues.resource)
         KBOCDResourceBars.UpdateVisibility(KBOCDResourceBars.healthBarFrameGlobal, KBOCDResourceBarsDB.healthBar)
         KBOCDResourceBars.UpdateVisibility(KBOCDResourceBars.primaryResourceBarFrameGlobal, KBOCDResourceBarsDB.primaryResourceBar)
+        KBOCDResourceBars.UpdateVisibility(KBOCDResourceBars.additionalResourceBarFrameGlobal, KBOCDResourceBarsDB.additionalResourceBar)
 
         KBOCDResourceBars.UpdateExtrasFrameVisibility(KBOCDResourceBars.playerUnitFrameHealthText, KBOCDResourceBarsDB, "displayHealthPercentageNextToPlayerFrame")
         KBOCDResourceBars.UpdateExtrasFrameVisibility(KBOCDResourceBars.playerUnitFramePrimaryResourceText, KBOCDResourceBarsDB, "displayPrimaryResourcePercentageNextToPlayerFrame")
