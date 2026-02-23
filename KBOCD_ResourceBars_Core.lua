@@ -24,7 +24,7 @@ KBOCDResourceBars.DefaultValues = {
         xPosition               = -187.33,
         yPosition               = -216.33,
         width                   = 138,
-        height                  = 21.5,
+        height                  = 22,
         gradientColorValues   = {
             firstStop  = {
                 red = 0.118,
@@ -75,6 +75,7 @@ KBOCDResourceBars.DefaultValues = {
         },
         showPercentage        = true,
         showMaxValue          = true,
+        showNumericalValue    = false
     },
     --------------------------------------------------
     -- Primary Resource Values
@@ -136,6 +137,7 @@ KBOCDResourceBars.DefaultValues = {
         },
         showPercentage        = true,
         showMaxValue          = true,
+        showNumericalValue    = false,
         dynamicBarColor       = true,
     },
     --------------------------------------------------
@@ -198,6 +200,7 @@ KBOCDResourceBars.DefaultValues = {
         },
         showPercentage        = true,
         showMaxValue          = true,
+        showNumericalValue    = false,
         dynamicBarColor       = true,
         resourceToken         = "MANA"
     }

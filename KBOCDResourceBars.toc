@@ -2,12 +2,25 @@
 ## Title: KBOCD Resource Bars
 ## Notes: Creates simple and customizable resource bars
 ## Author: KurenBatsu
-## Version: 1.0.1
+## Version: 1.1
 ## SavedVariablesPerCharacter: KBOCDResourceBarsDB
+
+KBOCD_UI_Library/KBOCD_UI_Functions.lua
+KBOCD_UI_Library/KBOCD_UI_Options_Elements.lua
 
 KBOCD_ResourceBars_Core.lua
 KBOCD_ResourceBars_BarElements.lua
 KBOCD_ResourceBars_Bars.lua
-KBOCD_ResourceBars_ConfigCore.lua
-KBOCD_ResourceBars_ConfigElements.lua
-KBOCD_ResourceBars_Config.lua
+
+Options/KBOCD_ResourceBars_OptionsDB.lua
+Options/KBOCD_ResourceBars_Options.lua
+Options/KBOCD_ResourceBars_Options_HealthDB.lua
+Options/KBOCD_ResourceBars_Options_Health.lua
+Options/KBOCD_ResourceBars_Options_PrimaryResourceDB.lua
+Options/KBOCD_ResourceBars_Options_PrimaryResource.lua
+Options/KBOCD_ResourceBars_Options_AdditionalResourceDB.lua
+Options/KBOCD_ResourceBars_Options_AdditionalResource.lua
+Options/KBOCD_ResourceBars_Options_ExtrasDB.lua
+Options/KBOCD_ResourceBars_Options_Extras.lua
+
+KBOCD_ResourceBars_FinalEventHandler.lua

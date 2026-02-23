@@ -180,10 +180,18 @@ end
 
 function KBOCDResourceBars.UpdateTargetHealthPercentage()
     local percentage = UnitHealthPercent(
-            "target",
-            true,
-            CurveConstants.ScaleTo100
-        )
+        "target",
+        true,
+        CurveConstants.ScaleTo100
+    )
+
+    if UnitClassification("target") == "minus" then
+        KBOCDResourceBars.targetUnitFrameHealthText:ClearAllPoints()
+        KBOCDResourceBars.targetUnitFrameHealthText:SetPoint("TOP", TargetFrame, "BOTTOM", -25, 59)
+    else
+        KBOCDResourceBars.targetUnitFrameHealthText:ClearAllPoints()
+        KBOCDResourceBars.targetUnitFrameHealthText:SetPoint("TOP", TargetFrame, "BOTTOM", -25, 55)
+    end
     KBOCDResourceBars.targetUnitFrameHealthText:SetText(string.format("%.0f%%", percentage))
     KBOCDResourceBars.targetUnitFrameHealthText:SetAlpha(percentage)
 end
